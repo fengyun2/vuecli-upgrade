@@ -22,7 +22,7 @@ export default {
   methods: {
     print() {
       html2canvas(document.getElementById("PieLegend"))
-        .then(canvas => {
+        .then((canvas) => {
           document.body.appendChild(canvas);
           this.$message.success("打印图表成功");
         })
@@ -37,12 +37,12 @@ export default {
 
       var uploadedDataURL = ROOT_PATH + "/data-gl/asset/data/flights.json";
       myChart.showLoading();
-      axios.get(uploadedDataURL).then(data => {
+      axios.get(uploadedDataURL).then((data) => {
         myChart.hideLoading();
         function getAirportCoord(idx) {
           return [data.airports[idx][3], data.airports[idx][4]];
         }
-        var routes = data.routes.map(function(airline) {
+        var routes = data.routes.map(function (airline) {
           return [getAirportCoord(airline[1]), getAirportCoord(airline[2])];
         });
         myChart.setOption({
@@ -53,33 +53,33 @@ export default {
             environment: "#333",
             realisticMaterial: {
               roughness: 0.8,
-              metalness: 0
+              metalness: 0,
             },
             postEffect: {
-              enable: true
+              enable: true,
             },
             groundPlane: {
-              show: false
+              show: false,
             },
             light: {
               main: {
                 intensity: 1,
-                alpha: 30
+                alpha: 30,
               },
               ambient: {
-                intensity: 0
-              }
+                intensity: 0,
+              },
             },
             viewControl: {
               distance: 70,
               alpha: 89,
               panMouseButton: "left",
-              rotateMouseButton: "right"
+              rotateMouseButton: "right",
             },
             itemStyle: {
-              color: "#000"
+              color: "#000",
             },
-            regionHeight: 0.5
+            regionHeight: 0.5,
           },
           series: [
             {
@@ -90,28 +90,28 @@ export default {
                 trailWidth: 1,
                 trailOpacity: 0.5,
                 trailLength: 0.2,
-                constantSpeed: 5
+                constantSpeed: 5,
               },
               blendMode: "lighter",
               lineStyle: {
                 width: 0.2,
-                opacity: 0.05
+                opacity: 0.05,
               },
-              data: routes
-            }
-          ]
+              data: routes,
+            },
+          ],
         });
-        window.addEventListener("keydown", function() {
+        window.addEventListener("keydown", function () {
           myChart.dispatchAction({
             type: "lines3DToggleEffect",
-            seriesIndex: 0
+            seriesIndex: 0,
           });
         });
       });
 
       option && myChart.setOption(option);
-    }
-  }
+    },
+  },
 };
 </script>
 

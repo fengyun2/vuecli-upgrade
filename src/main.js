@@ -25,10 +25,10 @@ VueAMap.initAMapApiLoader({
     "AMap.ToolBar",
     "AMap.MapType",
     "AMap.PolyEditor",
-    "AMap.CircleEditor"
+    "AMap.CircleEditor",
   ],
   // 默认高德 sdk 版本为 1.4.4
-  v: "1.4.4"
+  v: "1.4.4",
 });
 // Vue.use(Antd);
 // Vue.use(DatePicker);
@@ -42,5 +42,5 @@ VueAMap.initAMapApiLoader({
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");

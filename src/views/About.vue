@@ -15,7 +15,7 @@ export default {
   components: {
     IForm,
     PieLegend,
-    Amap
-  }
+    Amap,
+  },
 };
 </script>

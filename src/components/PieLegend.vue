@@ -22,7 +22,7 @@ export default {
   components: { Lines3d, Amap, HelloWorld },
   data() {
     return {
-      comps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+      comps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
     };
   },
   mounted() {
@@ -31,7 +31,7 @@ export default {
   methods: {
     print() {
       html2canvas(document.getElementById("PieLegend"))
-        .then(canvas => {
+        .then((canvas) => {
           document.body.appendChild(canvas);
           this.$message.success("打印图表成功");
         })
@@ -49,11 +49,11 @@ export default {
         title: {
           text: "同名数量统计",
           subtext: "纯属虚构",
-          left: "center"
+          left: "center",
         },
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b} : {c} ({d}%)"
+          formatter: "{a} <br/>{b} : {c} ({d}%)",
         },
         legend: {
           type: "scroll",
@@ -61,7 +61,7 @@ export default {
           right: 10,
           top: 20,
           bottom: 20,
-          data: data.legendData
+          data: data.legendData,
         },
         series: [
           {
@@ -74,11 +74,11 @@ export default {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)"
-              }
-            }
-          }
-        ]
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
       };
       function genData(count) {
         // prettier-ignore
@@ -95,12 +95,12 @@ export default {
           legendData.push(name);
           seriesData.push({
             name: name,
-            value: Math.round(Math.random() * 100000)
+            value: Math.round(Math.random() * 100000),
           });
         }
         return {
           legendData: legendData,
-          seriesData: seriesData
+          seriesData: seriesData,
         };
         function makeWord(max, min) {
           const nameLen = Math.ceil(Math.random() * max + min);
@@ -115,8 +115,8 @@ export default {
       }
 
       option && myChart.setOption(option);
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -8,9 +8,9 @@
 export default {
   data() {
     return {
-      msg: "vue-amap向你问好！"
+      msg: "vue-amap向你问好！",
     };
-  }
+  },
 };
 </script>
 

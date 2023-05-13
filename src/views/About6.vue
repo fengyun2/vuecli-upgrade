@@ -12,7 +12,7 @@ export default {
   name: "home",
   components: {
     IForm,
-    PieLegend
-  }
+    PieLegend,
+  },
 };
 </script>

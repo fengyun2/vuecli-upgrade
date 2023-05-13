@@ -24,7 +24,7 @@ export default {
     IForm,
     PieLegend,
     Lines3d,
-    Amap
-  }
+    Amap,
+  },
 };
 </script>

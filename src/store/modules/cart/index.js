@@ -1,10 +1,10 @@
 const state = () => ({
   items: [],
-  checkoutStatus: null
+  checkoutStatus: null,
 });
 const getters = {};
 const actions = {
-  checkout() {}
+  checkout() {},
 };
 
 const mutations = {};
@@ -14,5 +14,5 @@ export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };
