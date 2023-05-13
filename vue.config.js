@@ -2,6 +2,8 @@ const webpack = require("webpack");
 const TerserPlugin = require("terser-webpack-plugin");
 const browserslistToEsbuild = require("browserslist-to-esbuild");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+// cdn相关配置
+const cdnConfig = require("./cdn.config.js");
 
 const isPro = process.env.NODE_ENV === "production";
 const useEsbuildMinify = true;
@@ -25,6 +27,13 @@ module.exports = {
       config.plugins.delete("prefetch");
       config.plugins.delete("preload");
       config.output.pathinfo(false);
+
+      // cdn相关配置
+      config.plugin("html").tap((args) => {
+        args[0].CDN = cdnConfig.useCDN ? cdnConfig.CDN : null;
+        args[0].inject = "body";
+        return args;
+      });
 
       config.optimization.runtimeChunk(true).splitChunks({
         cacheGroups: {
@@ -96,5 +105,10 @@ module.exports = {
       })
     );
     // }
+
+    // 生产环境开启cdn
+    if (isPro) {
+      config.externals = cdnConfig.useCDN ? cdnConfig.externals : {};
+    }
   },
 };
