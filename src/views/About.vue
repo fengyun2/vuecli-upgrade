@@ -1,5 +1,6 @@
 <template>
   <div class="about">
+    <p class="title">这是首页</p>
     <IForm />
     <PieLegend />
     <Amap />
@@ -19,3 +20,9 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.title {
+  font-size: $--font-size-large;
+  color: $--color-primary;
+}
+</style>
