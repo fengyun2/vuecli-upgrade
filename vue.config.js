@@ -89,6 +89,7 @@ module.exports = {
     }
   },
   configureWebpack: (config) => {
+    config.devtool = !isPro ? "eval-cheap-module-source-map" : false;
     config.cache = isPro
       ? false
       : {
