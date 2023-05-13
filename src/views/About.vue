@@ -1,5 +1,18 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <IForm />
+    <PieLegend />
   </div>
 </template>
+<script>
+import IForm from "@/components/Form.vue";
+import PieLegend from "@/components/PieLegend.vue";
+
+export default {
+  name: "home",
+  components: {
+    IForm,
+    PieLegend
+  }
+};
+</script>
