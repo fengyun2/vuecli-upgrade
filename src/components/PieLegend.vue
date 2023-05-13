@@ -4,13 +4,27 @@
       <el-button @click="print">打印图表</el-button>
     </div>
     <div id="PieLegend"></div>
+    <div v-for="item in comps" :key="item">
+      <Lines3d />
+      <Amap />
+      <HelloWorld />
+    </div>
   </div>
 </template>
 
 <script>
 import * as echarts from "echarts";
 import html2canvas from "html2canvas";
+import Lines3d from "./Lines3d";
+import Amap from "./Amap";
+import HelloWorld from "./HelloWorld";
 export default {
+  components: { Lines3d, Amap, HelloWorld },
+  data() {
+    return {
+      comps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    };
+  },
   mounted() {
     this.initRender();
   },

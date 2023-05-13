@@ -4,6 +4,8 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <IForm />
     <PieLegend />
+    <Lines3d />
+    <Amap />
   </div>
 </template>
 
@@ -12,13 +14,17 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 import IForm from "@/components/Form.vue";
 import PieLegend from "@/components/PieLegend.vue";
+import Lines3d from "../components/Lines3d.vue";
+import Amap from "@/components/Amap.vue";
 
 export default {
   name: "home",
   components: {
     // HelloWorld,
     IForm,
-    PieLegend
+    PieLegend,
+    Lines3d,
+    Amap
   }
 };
 </script>

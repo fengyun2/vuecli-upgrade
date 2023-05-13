@@ -47,6 +47,9 @@
     <el-form-item label="活动形式">
       <el-input type="textarea" v-model="form.desc"></el-input>
     </el-form-item>
+    <el-form-item label="视频介绍">
+      <Player />
+    </el-form-item>
     <el-form-item>
       <el-button type="primary" @click="onSubmit">立即创建</el-button>
       <el-button>取消</el-button>
@@ -58,9 +61,13 @@
 import moment from "moment";
 import { cloneDeep } from "lodash";
 import axios from "axios";
+import Player from "./Player";
+// import { JSONEditor } from "vanilla-jsoneditor";
 export default {
+  components: { Player },
   data() {
     return {
+      editor: null,
       form: {
         name: "",
         region: "",
@@ -73,9 +80,35 @@ export default {
       }
     };
   },
+  created() {
+    this.initData();
+  },
   methods: {
+    initData() {
+      // const content = { text: "[1,2,3]" };
+      // const editor = new JSONEditor({
+      //   target: document.getElementById("jsoneditor"),
+      //   props: {
+      //     content,
+      //     onChange: (
+      //       updatedContent,
+      //       previousContent,
+      //       { contentErrors, patchResult }
+      //     ) => {
+      //       // content is an object { json: JSONValue } | { text: string }
+      //       console.log("onChange", {
+      //         updatedContent,
+      //         previousContent,
+      //         contentErrors,
+      //         patchResult
+      //       });
+      //     }
+      //   }
+      // });
+      // this.editor = editor;
+    },
     onSubmit() {
-      console.log("submit!");
+      // console.log("submit!");
       const formData = cloneDeep(this.form);
       formData.date1 = formData.date1
         ? moment(formData.date1).format("YYYY/MM/DD HH:mm:ss")
