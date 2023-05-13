@@ -11,6 +11,14 @@ const useEsbuildMinify = true;
 module.exports = {
   productionSourceMap: false, // 生产环境关闭sourcemap
   lintOnSave: !isPro, // 生产环境关闭eslint
+  css: {
+    loaderOptions: {
+      sass: {
+        // 根据自己样式文件的位置调整
+        prependData: `@import "@/styles/variables.scss";`,
+      },
+    },
+  },
   chainWebpack: (config) => {
     // 使用 esbuild 编译 js 文件
     const rule = config.module.rule("js");
