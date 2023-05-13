@@ -118,6 +118,14 @@ module.exports = {
     // 生产环境开启cdn
     if (isPro) {
       config.externals = cdnConfig.useCDN ? cdnConfig.externals : {};
+
+      config.plugins.push(
+        // 忽略 moment 下的 /locale 目录
+        new webpack.IgnorePlugin({
+          resourceRegExp: /^\.\/locale$/,
+          contextRegExp: /moment$/,
+        })
+      );
     }
   },
 };
