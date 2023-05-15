@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --no-module",
-    "lint": "vue-cli-service lint --fix"
+    "lint": "vue-cli-service lint --fix",
+    "inspect": "vue inspect --mode production > dist/webpack.config.production.js"
   },
   "dependencies": {
     "ant-design-vue": "^3.2.20",
