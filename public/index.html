@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="icon" href="/favicon.ico">
     <!-- 使用 CDN 的 CSS 文件 start -->
-    <% for (var i in htmlWebpackPlugin.options.CDN && htmlWebpackPlugin.options.CDN.css) { %>
+    <!-- <% for (var i in htmlWebpackPlugin.options.CDN && htmlWebpackPlugin.options.CDN.css) { %>
       <link href="<%= htmlWebpackPlugin.options.CDN.css[i] %>" rel="stylesheet">
-    <% } %>
+    <% } %> -->
     <!-- 使用 CDN 的 CSS 文件 end -->
 
     <!-- 使用 CDN 的 JS 文件 -->
-    <% for (var i in htmlWebpackPlugin.options.CDN && htmlWebpackPlugin.options.CDN.js) { %>
+    <!-- <% for (var i in htmlWebpackPlugin.options.CDN && htmlWebpackPlugin.options.CDN.js) { %>
       <script type="module" src="<%= htmlWebpackPlugin.options.CDN.js[i] %>"></script>
-    <% } %>
+    <% } %> -->
     <!-- 使用 CDN 的 JS 文件 end -->
 
     <title>hello-world</title>
@@ -25,5 +25,6 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
